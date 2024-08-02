@@ -1,27 +1,75 @@
-<p>Nombre del empleado: {{nombre}}</p>
-<p>Apellido del empleado: {{apellido}}</p>
-<p>Edad del empleado: {{edad<18?"Es menor de edad":"Es mayor de edad"}}</p>
-<p>Genero del empleado: {{genero}}</p>
-<p>Nombre de la empresa: {{empresa}}</p>
-
+<p>Nombre del empleado: {{ nombre }}</p>
+<p>Apellido del empleado: {{ apellido }}</p>
+<p>
+  Edad del empleado: {{ edad < 18 ? "Es menor de edad" : "Es mayor de edad" }}
+</p>
+<p>Genero del empleado: {{ genero }}</p>
+<p>Nombre de la empresa: {{ empresa }}</p>
 
 <!--Property binding  
 Introduce la empresa:<input type="text" #empresa (keyup)="0" [disabled]="habilitacionInput">
 -->
 
+<br /><br />
+Introduce la empresa:<!-- [(ngModel)]="empresa" -->
+<input type="text" [(ngModel)]="empresa" />
 
-<br><br>
-Introduce la empresa:<!-- [(ngModel)]="empresa" --> 
-<input type="text" [(ngModel)]="empresa"  > 
-
-<p>{{textoDeRegistro}}</p>
+<p>{{ textoDeRegistro }}</p>
 
 <!-- Event Binding -->
 <label for="registro">Registrado: </label>
- <input type="radio" name="nRegistro" value="si" id="registro" [checked]="usuRegistrado" (click)="setUsuarioRegistrado($event)">
- 
- <label for="nregistro">No registrado:</label>
- <input type="radio" name="nRegistro" value="no" id="nregistro" (click)="setUsuarioRegistrado($event)">
+<input
+  type="radio"
+  name="nRegistro"
+  value="si"
+  id="registro"
+  [checked]="usuRegistrado"
+  (click)="setUsuarioRegistrado($event)"
+/>
 
+<label for="nregistro">No registrado:</label>
+<input
+  type="radio"
+  name="nRegistro"
+  value="no"
+  id="nregistro"
+  (click)="setUsuarioRegistrado($event)"
+/>
 
+<!-- Calculadora -->
+<div style="display: flex; flex-direction: column; align-items: center">
+  <h2>Mini Calculadora</h2>
+  <div class="container">
+    <form class="mx-auto" style="width: 200px">
+      <label for="n1">Numero 1:</label>
+      <input
+        [(ngModel)]="numero1"
+        name="numero1"
+        min="0"
+        type="number"
+        id="n1"
+      />
+      <br />
+      <label for="n2">Numero 2:</label>
+      <input [(ngModel)]="numero2" name="numero2" type="number" id="n2" />
+      <br />
+      <input
+        (click)="sumar()"
+        class="btn btn-success mt-2"
+        type="submit"
+        value="Sumar"
+      />
+      &nbsp;
+      <input
+        (click)="restar()"
+        class="btn mt-2 btn-danger"
+        type="submit"
+        value="Restar"
+      />
+    </form>
+  </div>
+  <p>Resultado: {{ resultado }}</p>
+</div>
+<!-- 
 
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> -->

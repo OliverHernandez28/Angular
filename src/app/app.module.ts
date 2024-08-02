@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { EmpleadosComponent } from './empleados/empleados/empleados.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { FormsModule } from '@angular/forms';
+import { DirectivaComponent } from './directiva/directiva.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpleadosComponent,
-    EmpleadoComponent
+    EmpleadoComponent,
+    DirectivaComponent
   ],
   imports: [
     BrowserModule,
