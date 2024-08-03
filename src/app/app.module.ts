@@ -7,18 +7,22 @@ import { EmpleadosComponent } from './empleados/empleados/empleados.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { FormsModule } from '@angular/forms';
 import { DirectivaComponent } from './directiva/directiva.component';
+import { CommonModule } from '@angular/common';
+import { HijoDirectivaComponent } from './hijo-directiva/hijo-directiva.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpleadosComponent,
     EmpleadoComponent,
-    DirectivaComponent
+    DirectivaComponent,
+    HijoDirectivaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [
     provideClientHydration()

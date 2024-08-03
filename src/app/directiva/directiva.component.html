@@ -15,6 +15,13 @@
       id="ape"
       name="apellido"
     /><br />
+    <label for="ape">Cargo</label>
+    <input
+      [(ngModel)]="usuario.cargo"
+      type="text"
+      id="ape"
+      name="Cargo"
+    /><br />
     <input
       (click)="registrado = true"
       type="submit"
@@ -25,7 +32,18 @@
 
   <!-- NgIf y su Else -->
   <p *ngIf="registrado; else sinRegistrar">
-    Usuario: {{ usuario.nombre }} {{ usuario.apellido }} Registrado con Exito!
+    Usuario: {{ usuario.nombre }} {{ usuario.apellido }} y con el cargo de
+    <span
+      [ngStyle]="{
+        color: usuario.cargo == 'Director' ? 'red' : 'black',
+        'font-weight': usuario.cargo == 'Director' ? 'bold' : '300'
+      }"
+      [ngClass]="{ directores: usuario.cargo == 'Director' }"
+    >
+      {{ usuario.cargo }}
+    </span>
+
+    Registrado con Exito!
   </p>
 
   <ng-template #sinRegistrar>
@@ -102,17 +120,15 @@
     </div>
   </form>
 </div>
+<!-- <small>Primera forma</small>
+<app-hijo-directiva [empleados]="empleados"></app-hijo-directiva> -->
+<small>Segunda forma</small>
 
-<div class="container mx-auto" style="width: 500px">
-  <div class="row">
-    <div class="col">
-      <div *ngFor="let obj of empleados; let i = index; let odd = odd">
-        <span [class.odd]="odd">
-          Empleado:{{ i + 1 }}: {{ obj.nombre }} {{ obj.apellido }}
-          {{ obj.cargo }} {{ obj.salario }}</span
-        >
-      </div>
-    </div>
-  </div>
-</div>
+<app-hijo-directiva
+  *ngFor="let obj of empleados; let i = index; let odd = odd"
+  [empleadodeLista]="obj"
+  [indice]="i"
+  [odd]="odd"
+></app-hijo-directiva>
+
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

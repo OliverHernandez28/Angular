@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Form } from '@angular/forms';
 import { Empleado } from './empleado.model';
 
@@ -12,7 +12,7 @@ export class DirectivaComponent {
   titulo="Registro de Usuarios"
 mensaje=""
 registrado=false;
-usuario={nombre:"",apellido:""}
+usuario={nombre:"",apellido:"",cargo:""}
 
 entradas:any=[];
 constructor(){
@@ -26,7 +26,7 @@ constructor(){
 }
 
 tituloPractica="Listado de empleados"
-empleados:Empleado[]=[
+ empleados:Empleado[]=[
   new Empleado("Oliver","Hernandez","Estudiante",1000),
   new Empleado("Alexis","Hernandes","Director",10000),
   new Empleado("Pedro","Hernandes","Estudiante",100),
