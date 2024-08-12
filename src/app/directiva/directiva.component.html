@@ -128,7 +128,9 @@
   *ngFor="let obj of empleados; let i = index; let odd = odd"
   [empleadodeLista]="obj"
   [indice]="i"
-  [odd]="odd"
-></app-hijo-directiva>
+  [odd]="odd" (propiedad)="addItem($event)"
+></app-hijo-directiva>  
 
+
+<!--  -->
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

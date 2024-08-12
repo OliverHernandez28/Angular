@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Empleado } from '../directiva/empleado.model';
 
 @Component({
@@ -11,5 +11,27 @@ export class HijoDirectivaComponent {
 @Input() empleadodeLista:Empleado;
 @Input() indice:number;
 @Input() odd:boolean;
+
+
+
+caracteristicas:string[]=[]
+addCaracteristica(item:string){
+  this.caracteristicas.push(item)
+}
+
+nombre:string
+addNombre(item:string){
+  this.nombre=item
+  this.agregarPropiedad(item)
+}
+
+
+
+
+@Output() propiedad = new EventEmitter<string>();
+agregarPropiedad(value:string){
+  this.propiedad.emit(value)
+}
+
 }
 

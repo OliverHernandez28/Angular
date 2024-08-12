@@ -24,7 +24,21 @@
           {{ empleadodeLista.apellido }} {{ empleadodeLista.cargo }}
           {{ empleadodeLista.salario }}</span
         >
+        <a [routerLink]="['/actualiza',indice]" [queryParams]="{accion:'1'}">
+          Actualiza
+       </a> 
+       &nbsp;
+       <a [routerLink]="['/actualiza',indice]" [queryParams]="{accion:'0'}">
+        Elimina
+     </a> 
       </div>
+<!-- output -->
+     <app-caracteristicas-empleados-c (nombre)="addNombre($event)"  (caracteristicasEmpleados)="addCaracteristica($event)"></app-caracteristicas-empleados-c>
+     <ul style="list-style: none;">
+     <li *ngFor="let item of caracteristicas">{{item}}</li>
+      </ul>
     </div>
   </div>
 </div>
+
+

@@ -1,7 +1,16 @@
+<nav class="navbar navbar-expand-sm bg-light" *ngIf="mostrarNav">
+    <ul class="navbar-nav d-flex justify-content-between w-100"> <!-- Agrega d-flex y w-100 -->
+        <div class="d-flex"> <!-- Usar d-flex para el primer grupo -->
+            <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="proyectos">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link" href="quienes">Quienes Somos</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
+        </div>
 
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. {{saludo}}🎉</p>
+        <div class="d-flex"> <!-- Usar d-flex para el segundo grupo -->
+            <li class="nav-item"><a (click)="logout()"  class="nav-link">Logout</a></li>
+        </div>
+    </ul>
+</nav>
 
-      <br>
-      <app-empleados></app-empleados>
-      
+  <router-outlet></router-outlet>

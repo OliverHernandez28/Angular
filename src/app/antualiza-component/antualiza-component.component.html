@@ -1,0 +1,77 @@
+<p>antualiza-component works!</p>
+
+
+<div class="container mx-auto" style="width: 1000px">
+    <form class="form-group row">
+      <div class="form-group col-3">
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Nombre"
+          class="form-control"
+          [(ngModel)]="formNombre"
+        />
+      </div>
+      <div class="form-group col-3">
+        <label for="apelli">Apellido:</label>
+        <input
+          type="text"
+          id="apelli"
+          name="apelli"
+          placeholder="Apellido"
+          class="form-control"
+          [(ngModel)]="formApellido"
+        />
+      </div>
+      <div class="form-group col-3">
+        <label for="carg">Cargo:</label>
+        <input
+          type="text"
+          id="carg"
+          name="carg"
+          placeholder="Cargo"
+          class="form-control"
+          [(ngModel)]="formCargo"
+        />
+      </div>
+      <div class="form-group col-3">
+        <label for="sal">Salario:</label>
+        <input
+          type="number"
+          id="sal"
+          name="sal"
+          placeholder="Salario"
+          class="form-control"
+          [(ngModel)]="formSalario"
+        />
+      </div>
+      <div class="d-flex justify-content-center">
+        <input
+          type="submit"
+          class="btn btn-success col-4 mt-1"
+          value="Actualizar"
+          (click)="actualizaEmpleado()"
+        />
+        <input
+        type="submit"
+        class="btn btn-danger col-4 mt-1"
+        value="Eliminar"
+        (click)="eliminaEmpleado()"
+      />
+
+      <input
+      type="submit"
+      class="btn btn-primary col-4 mt-1"
+      [value]="accion==1?'Actualizar':'Eliminar'"
+      (click)="accionEmpleado()"
+    />
+      </div>
+    </form>
+  </div>
+
+  <br>
+<div style="text-align: center;">
+<button class="btn btn-success" (click)="volverHome()">Volver Home</button>
+</div>
